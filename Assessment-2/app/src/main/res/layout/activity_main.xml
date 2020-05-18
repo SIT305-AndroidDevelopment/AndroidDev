@@ -7,6 +7,51 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+        >
+    <RadioGroup
+        android:id="@+id/rg_main_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_gravity="bottom">
+
+        <RadioButton
+            android:id="@+id/rb_video"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:text="Video"
+            />
+
+        <RadioButton
+            android:id="@+id/rb_brand"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:text="Brand"
+
+            />
+
+        <RadioButton
+            android:id="@+id/rb_map"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:text="Map"
+            />
+        <RadioButton
+            android:id="@+id/rb_login"
+            android:layout_height="match_parent"
+            android:layout_width="match_parent"
+            android:layout_weight="1"
+            android:text="Login"
+            />
+    </RadioGroup>
+</LinearLayout>
+
     <androidx.viewpager.widget.ViewPager
         android:id="@+id/viewPager"
         android:layout_width="match_parent"
