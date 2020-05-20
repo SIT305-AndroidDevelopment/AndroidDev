@@ -1,0 +1,33 @@
+package com.example.assessment_2;
+
+import android.os.Bundle;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+
+//public class frag_video extends Fragment {
+//    public View initView(LayoutInflater inflater, ViewGroup container, Bundle savedInstanceState) {
+//        View view = inflater.inflate(R.layout.video_fragment, container,false);
+//        return view;
+//    }
+//}
+
+class FragmentVideo extends Fragment {
+
+    public FragmentVideo(int contentLayoutId) {
+
+    }
+
+    @Nullable
+    @Override
+    public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+
+        View view_ABC = inflater.inflate(R.layout.video_fragment, null);
+
+        return view_ABC;
+    }
+}
