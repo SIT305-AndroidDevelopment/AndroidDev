@@ -5,11 +5,11 @@
     tools:context=".ui.HomeActivity">
 
     <TextView
-        android:id="@+id/txt_news_title"
+        android:id="@+id/txt_user_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_centerInParent="true"
-        android:text="BrandPage"
+        android:text="UserPage"
         android:textColor="#1B940A"
         android:textSize="30dp" />
 
