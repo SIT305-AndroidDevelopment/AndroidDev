@@ -13,7 +13,9 @@ import androidx.viewpager.widget.ViewPager;
 import java.util.ArrayList;
 import java.util.List;
 
-public class MainActivity extends Activity implements View.OnClickListener, ViewPager.OnPageChangeListener {
+public class
+
+MainActivity extends Activity implements View.OnClickListener, ViewPager.OnPageChangeListener {
 
     private TextView txt_title;
 
