@@ -1,182 +1,108 @@
 package com.example.assessment_2;
 
-import android.app.Activity;
-import android.graphics.Color;
 import android.os.Bundle;
-import android.view.View;
-import android.widget.ImageView;
-import android.widget.LinearLayout;
-import android.widget.TextView;
+import android.widget.FrameLayout;
 
-import androidx.viewpager.widget.ViewPager;
+import androidx.annotation.Nullable;
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
-import java.util.ArrayList;
-import java.util.List;
+import com.ashokvarma.bottomnavigation.BottomNavigationBar;
+import com.ashokvarma.bottomnavigation.BottomNavigationItem;
+import com.example.assessment_2.UI.BrandFragment;
+import com.example.assessment_2.UI.HomeFragment;
+import com.example.assessment_2.UI.MapFragment;
+import com.example.assessment_2.UI.UserFragment;
 
-public class
+public class MainActivity extends AppCompatActivity{
+    /**
+     * 主界面容器
+     */
+    public FrameLayout frameContainer;
 
-MainActivity extends Activity implements View.OnClickListener, ViewPager.OnPageChangeListener {
-
-    private TextView txt_title;
-
-    // 底部菜单4个Linearlayout
-    private LinearLayout ll_home;
-    private LinearLayout ll_address;
-    private LinearLayout ll_friend;
-    private LinearLayout ll_setting;
-
-    // 底部菜单4个ImageView
-    private ImageView img_home;
-    private ImageView img_news;
-    private ImageView img_friend;
-    private ImageView img_user;
-
-    // 底部菜单4个菜单标题
-    private TextView txt_home;
-    private TextView txt_news;
-    private TextView txt_friend;
-    private TextView txt_user;
-
-    // 中间内容区域
-    private ViewPager viewPager;
-
-    // ViewPager适配器ContentAdapter
-    private ContentAdapter adapter;
-    private List<View> views;
+    /**
+     * 底部导航栏
+     */
+    public BottomNavigationBar bottomNavBar;
 
     @Override
-    protected void onCreate(Bundle savedInstanceState) {
+    protected void onCreate(@Nullable Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        initView();// 初始化控件
-        initEvent();// 设置按钮监听
+        frameContainer = findViewById(R.id.frame_container);
+        bottomNavBar = findViewById(R.id.bottom_nav_bar);
 
-        //txt_title.setText(R.string.txt_nav_home);
-        txt_home.setTextColor(0xff1B940A);
-    }
 
-    private void initEvent() {
-        ll_home.setOnClickListener(this);
-        ll_address.setOnClickListener(this);
-        ll_friend.setOnClickListener(this);
-        ll_setting.setOnClickListener(this);
-        viewPager.setOnPageChangeListener(this);
-    }
 
-    private void initView() {
-        txt_title = findViewById(R.id.title);
-
-        // 底部菜单4个Linearlayout
-        ll_home = findViewById(R.id.ll_home);
-        ll_address = findViewById(R.id.ll_brand);
-        ll_friend = findViewById(R.id.ll_map);
-        ll_setting = findViewById(R.id.ll_user);
-
-        // 底部菜单4个ImageView
-        img_home = findViewById(R.id.img_home);
-        img_news = findViewById(R.id.img_brand);
-        img_friend = findViewById(R.id.img_map);
-        img_user = findViewById(R.id.img_user);
-
-        // 底部菜单4个菜单标题
-        txt_home = findViewById(R.id.txt_home);
-        txt_news = findViewById(R.id.txt_brand);
-        txt_friend = findViewById(R.id.txt_map);
-        txt_user = findViewById(R.id.txt_user);
-
-        // 中间内容区域ViewPager
-        viewPager = findViewById(R.id.vp_content);
-
-        // 适配器
-        View page_home = View.inflate(MainActivity.this, R.layout.page_home, null);
-        View page_news = View.inflate(MainActivity.this, R.layout.page_brand, null);
-        View page_friend = View.inflate(MainActivity.this, R.layout.page_map, null);
-        View page_user = View.inflate(MainActivity.this, R.layout.page_user, null);
-
-        views = new ArrayList<View>();
-        views.add(page_home);
-        views.add(page_news);
-        views.add(page_friend);
-        views.add(page_user);
-        adapter = new ContentAdapter(views);
-        viewPager.setAdapter(adapter);
+        initTabBottom();
+        initTabListener();
     }
 
 
-    @Override
-    public void onClick(View v) {
-        switch (v.getId()) {
-            case R.id.ll_home:
-                restartBotton();
-                //txt_title.setText(R.string.txt_nav_home);
-                txt_home.setTextColor(0xff1B940A);
-                viewPager.setCurrentItem(0);
-                break;
-            case R.id.ll_brand:
-                restartBotton();
-                //txt_title.setText(R.string.txt_nav_news);
-                txt_news.setTextColor(0xff1B940A);
-                viewPager.setCurrentItem(1);
-                break;
-            case R.id.ll_map:
-                restartBotton();
-                //txt_title.setText(R.string.txt_nav_friend);
-                txt_friend.setTextColor(0xff1B940A);
-                viewPager.setCurrentItem(2);
-                break;
-            case R.id.ll_user:
-                restartBotton();
-                //txt_title.setText(R.string.txt_nav_user);
-                txt_user.setTextColor(0xff1B940A);
-                viewPager.setCurrentItem(3);
-                break;
+    /**
+     * 初始化底部导航栏
+     */
+    public void initTabBottom() {
+        bottomNavBar.setMode(BottomNavigationBar.MODE_FIXED);
+        bottomNavBar.setBackgroundStyle(BottomNavigationBar.BACKGROUND_STYLE_STATIC);
+        bottomNavBar.setBarBackgroundColor(R.color.white);
 
-            default:
-                break;
-        }
+        BottomNavigationItem bnbItemNotice = new BottomNavigationItem(R.drawable.btn_home, "Home").setInactiveIconResource(R.drawable.btn_home);
+        BottomNavigationItem bnbItemStatistic = new BottomNavigationItem(R.drawable.btn_brand, "Brand").setInactiveIconResource(R.drawable.btn_brand);
+        BottomNavigationItem bnbItemSchool = new BottomNavigationItem(R.drawable.btn_map, "Map").setInactiveIconResource(R.drawable.btn_map);
+        BottomNavigationItem bnbItemMe = new BottomNavigationItem(R.drawable.btn_user, "User").setInactiveIconResource(R.drawable.btn_user);
+
+        bottomNavBar.addItem(bnbItemNotice);
+        bottomNavBar.addItem(bnbItemStatistic);
+        bottomNavBar.addItem(bnbItemSchool);
+        bottomNavBar.addItem(bnbItemMe);
+        bottomNavBar.initialise();
     }
 
-    @Override
-    public void onPageScrolled(int position, float positionOffset, int positionOffsetPixels) {
 
-    }
+    /**
+     * 监听导航栏
+     */
+    public void initTabListener() {
+        bottomNavBar.setTabSelectedListener(new BottomNavigationBar.OnTabSelectedListener() {
+            @Override
+            public void onTabSelected(int position) {
+                FragmentManager fm = getSupportFragmentManager();
+                FragmentTransaction transaction = fm.beginTransaction();
+                switch (position) {
+                    case 0:
+                        transaction.replace(R.id.frame_container, new HomeFragment());
+                        transaction.commit();
+                        break;
+                    case 1:
+                        transaction.replace(R.id.frame_container, new BrandFragment());
+                        transaction.commit();
+                        break;
+                    case 2:
+                        transaction.replace(R.id.frame_container, new MapFragment());
+                        transaction.commit();
+                        break;
+                    case 3:
+                        transaction.replace(R.id.frame_container, new UserFragment());
+                        transaction.commit();
+                        break;
+                    default:
+                        break;
+                }
+            }
 
-    @Override
-    public void onPageSelected(int position) {
-        restartBotton();
-        switch (position) {
-            case 0:
-                //txt_title.setText(R.string.txt_nav_home);
-                txt_home.setTextColor(0xff1B940A);
-                break;
-            case 1:
-                //txt_title.setText(R.string.txt_nav_news);
-                txt_news.setTextColor(0xff1B940A);
-                break;
-            case 2:
-                //txt_title.setText(R.string.txt_nav_friend);
-                txt_friend.setTextColor(0xff1B940A);
-                break;
-            case 3:
-                //txt_title.setText(R.string.txt_nav_user);
-                txt_user.setTextColor(0xff1B940A);
-                break;
+            @Override
+            public void onTabUnselected(int position) {
 
-            default:
-                break;
-        }
-    }
+            }
 
-    @Override
-    public void onPageScrollStateChanged(int state) {
+            @Override
+            public void onTabReselected(int position) {
 
-    }
+            }
+        });
 
-    //重置链接样式
-    private void restartBotton() {
-        txt_home.setTextColor(Color.parseColor("#888888"));
-        txt_news.setTextColor(Color.parseColor("#888888"));
-        txt_friend.setTextColor(Color.parseColor("#888888"));
-        txt_user.setTextColor(Color.parseColor("#888888"));
+        bottomNavBar.selectTab(0);
     }
 }

@@ -3,16 +3,22 @@ package com.example.assessment_2;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 import androidx.viewpager.widget.PagerAdapter;
 
 import java.util.List;
 
 class ContentAdapter extends PagerAdapter {
 
+    private final FragmentManager supportFragmentManager;
+    private MainActivity act;
     private List<View> views;
 
-    public ContentAdapter(List<View> views) {
+    public ContentAdapter(MainActivity mainActivity, List<View> views) {
         this.views = views;
+        this.act = mainActivity;
+        supportFragmentManager = act.getSupportFragmentManager();
     }
 
     @Override
@@ -29,6 +35,7 @@ class ContentAdapter extends PagerAdapter {
     public Object instantiateItem(ViewGroup container, int position) {
         View view = views.get(position);
         container.addView(view);
+        FragmentTransaction fragmentTransaction = supportFragmentManager.beginTransaction();
         return view;
     }
 
