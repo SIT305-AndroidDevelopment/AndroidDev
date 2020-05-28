@@ -10,8 +10,9 @@
 
     <com.baidu.mapapi.map.MapView
         android:id="@+id/bmapView"
+        android:layout_marginTop="350dp"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"/>
+        android:layout_height="200dp"/>
 
     <ImageButton
         android:id="@+id/ib_loc"

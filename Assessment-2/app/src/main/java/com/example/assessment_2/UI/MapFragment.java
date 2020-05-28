@@ -21,13 +21,19 @@ import com.baidu.location.BDLocation;
 import com.baidu.location.LocationClient;
 import com.baidu.location.LocationClientOption;
 import com.baidu.mapapi.map.BaiduMap;
+import com.baidu.mapapi.map.BitmapDescriptor;
+import com.baidu.mapapi.map.BitmapDescriptorFactory;
 import com.baidu.mapapi.map.MapStatus;
 import com.baidu.mapapi.map.MapStatusUpdate;
 import com.baidu.mapapi.map.MapStatusUpdateFactory;
 import com.baidu.mapapi.map.MapView;
+import com.baidu.mapapi.map.MarkerOptions;
 import com.baidu.mapapi.map.MyLocationData;
+import com.baidu.mapapi.map.OverlayOptions;
 import com.baidu.mapapi.model.LatLng;
 import com.example.assessment_2.R;
+import com.example.assessment_2.model.StoreData;
+import com.google.gson.Gson;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -35,7 +41,6 @@ import java.util.List;
 public class MapFragment extends Fragment {
     private MapView mMapView = null;
     private BaiduMap mBaiduMap;
-
 
     private ImageButton btn_loc;
     public LocationClient mLocationClient = null;
@@ -55,6 +60,9 @@ public class MapFragment extends Fragment {
         btn_loc = view.findViewById(R.id.ib_loc);
         mBaiduMap = mMapView.getMap();
 
+
+        String demoLocation = "test";
+
         btn_loc.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
@@ -70,14 +78,33 @@ public class MapFragment extends Fragment {
                         .zoom(15)
                         .build();
 
+                Gson gson = new Gson();
+                String str = new String();
+
+                final StoreData storeInfo = gson.fromJson(str , StoreData.class);
+
+                //定义Maker坐标点
+                LatLng point = new LatLng(latitude, longitude);
+//构建Marker图标
+                BitmapDescriptor bitmap = BitmapDescriptorFactory
+                        .fromResource(R.drawable.ic_honda);
+//构建MarkerOption，用于在地图上添加Marker
+                OverlayOptions option = new MarkerOptions()
+                        .position(point)
+                        .icon(bitmap);
+//在地图上添加Marker，并显示
+                mBaiduMap.addOverlay(option);
+
+
                 //定义MapStatusUpdate对象，以便描述地图状态将要发生的变化
                 MapStatusUpdate mMapStatusUpdate = MapStatusUpdateFactory.newMapStatus(mMapStatus);
 
                 //改变地图状态
                 mBaiduMap.setMapStatus(mMapStatusUpdate);
+
+
             }
         });
-
 
 
         mBaiduMap.setMyLocationEnabled(true);

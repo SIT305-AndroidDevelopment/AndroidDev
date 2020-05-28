@@ -18,8 +18,22 @@ public class UserFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
         view = inflater.inflate(R.layout.page_home, container, false);
-        title = view.findViewById(R.id.txt_home_title);
+//        title = view.findViewById(R.id.txt_home_title);
         //title.setText("我是" + getResources().getString(R.string.txt_nav_home));
+
+//生成json
+//        List<StoreBean> storeBeans = new ArrayList<>();
+//        for (int i = 0; i < 3; i++) {
+//            StoreBean storeBean = new StoreBean();
+//            storeBean.setLatitude(1.1);
+//            storeBean.setLongtitude(2.2);
+//            storeBean.setName("3");
+//            storeBeans.add(storeBean);
+//        }
+////
+//        Gson gson = new Gson();
+//        String toJson = gson.toJson(storeBeans);
+//
         return view;
     }
 

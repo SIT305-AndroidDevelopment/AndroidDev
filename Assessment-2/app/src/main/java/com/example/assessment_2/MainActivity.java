@@ -33,8 +33,6 @@ public class MainActivity extends AppCompatActivity{
         frameContainer = findViewById(R.id.frame_container);
         bottomNavBar = findViewById(R.id.bottom_nav_bar);
 
-
-
         initTabBottom();
         initTabListener();
     }
