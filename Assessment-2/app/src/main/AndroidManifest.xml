@@ -36,14 +36,18 @@
         <meta-data
             android:name="com.baidu.lbsapi.API_KEY"
             android:value="pUn5YvaHeiHli81lAxuHSofkIQXjp6fo" />
-        <activity android:name=".MainActivity">
+        <activity android:name=".SplashActivity"
+            android:theme="@style/AppSplash"
+            >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".MainActivity" />
         <activity android:name=".activity.BrandDetailActivity" />
+        <activity android:name=".activity.WebViewActivity" />
     </application>
 
 </manifest>

@@ -10,10 +10,10 @@ import androidx.fragment.app.FragmentTransaction;
 
 import com.ashokvarma.bottomnavigation.BottomNavigationBar;
 import com.ashokvarma.bottomnavigation.BottomNavigationItem;
-import com.example.assessment_2.UI.BrandFragment;
-import com.example.assessment_2.UI.HomeFragment;
-import com.example.assessment_2.UI.MapFragment;
-import com.example.assessment_2.UI.UserFragment;
+import com.example.assessment_2.main.BrandFragment;
+import com.example.assessment_2.main.HomeFragment;
+import com.example.assessment_2.main.MapFragment;
+import com.example.assessment_2.main.UserFragment;
 
 public class MainActivity extends AppCompatActivity{
     /**
