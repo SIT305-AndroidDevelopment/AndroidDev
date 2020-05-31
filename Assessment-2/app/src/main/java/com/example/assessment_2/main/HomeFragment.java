@@ -88,6 +88,4 @@ public class HomeFragment extends Fragment {
         viewPager.setAdapter(cAdapterChannelPager);
         tabLayout.setupWithViewPager(viewPager);
     }
-
-
 }

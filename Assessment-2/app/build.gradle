@@ -56,4 +56,8 @@ dependencies {
     implementation 'com.youth.banner:banner:1.4.9'
     implementation files('libs\\BaiduLBS_Android.jar')
     implementation 'cn.jzvd:jiaozivideoplayer:6.2.7'
+
+    //maven repo
+    repositories { maven { url 'http://192.168.1.8:8081/repository/maven-releases/' } }
+    api 'com.example.assessment_2:maven_model:1.0.1@aar'
 }

@@ -58,7 +58,7 @@
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_gravity="center"
-            android:src="@drawable/icon_locate"
+            android:src="@drawable/ic_locate"
             />
 
     </LinearLayout>

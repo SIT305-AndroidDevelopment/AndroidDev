@@ -144,7 +144,7 @@ public class MapFragment extends Fragment {
             LatLng point = new LatLng(bean.latitude, bean.longitude);
 //构建Marker图标
             BitmapDescriptor bitmap = BitmapDescriptorFactory
-                    .fromResource(R.drawable.icon_marker);
+                    .fromResource(R.drawable.ic_marker);
 //构建MarkerOption，用于在地图上添加Marker
             OverlayOptions option = new MarkerOptions()
                     .position(point) //必传参数

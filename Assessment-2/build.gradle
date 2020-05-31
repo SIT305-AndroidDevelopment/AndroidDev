@@ -18,18 +18,13 @@ buildscript {
 
 allprojects {
     repositories {
+        maven { url 'http://cwdxlj.picp.io/repository/maven-releases/' }
+        maven { url "https://jitpack.io" }
         google()
         jcenter()
-        
     }
 }
 
 task clean(type: Delete) {
     delete rootProject.buildDir
-}
-
-allprojects {
-    repositories {
-        maven { url "https://jitpack.io" }
-    }
 }
