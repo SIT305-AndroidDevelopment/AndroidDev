@@ -12,13 +12,6 @@ import androidx.annotation.Nullable;
 
 import com.example.assessment_2.R;
 
-
-/**
- * 2018/4/26 11:39.
- *
- * @author zayin.
- */
-
 public class WebViewActivity extends Activity {
 
     WebView webView;

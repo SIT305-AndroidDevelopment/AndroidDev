@@ -6,7 +6,8 @@
     android:layout_height="wrap_content"
     android:layout_marginTop="20dp"
     android:orientation="horizontal"
-    tools:context=".MainActivity">
+    tools:context=".MainActivity"
+    android:id="@+id/ll_BikeItem">
 
     <ImageView
         android:id="@+id/img_motor"

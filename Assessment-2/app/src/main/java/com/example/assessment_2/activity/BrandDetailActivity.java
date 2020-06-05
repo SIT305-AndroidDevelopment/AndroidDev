@@ -80,9 +80,9 @@ public class BrandDetailActivity extends Activity {
         });
     }
 
-    private void initRecyclerView(List<MotorItem> motoList) {
+    private void initRecyclerView(List<MotorItem> motorList) {
 //        BikeListAdapter bikeListAdapter = new BikeListAdapter(this, R.layout.item_bike, collect);
-        BikeListAdapter bikeListAdapter = new BikeListAdapter(this, R.layout.item_bike, motoList);
+        BikeListAdapter bikeListAdapter = new BikeListAdapter(this, R.layout.item_bike, motorList);
         bikeRecyclerView.setAdapter(bikeListAdapter);
         bikeRecyclerView.setLayoutManager(new LinearLayoutManager(this));
     }

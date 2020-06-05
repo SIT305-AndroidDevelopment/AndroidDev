@@ -14,10 +14,8 @@ import java.util.HashMap;
 
 /**
  * 全局SharedPreference工具类，可靠稳定
- * Created by zayin on 2016/4/4.
- * Time:04月04日   11:01
  */
-public class SPUtil {
+public class SharePreferenceUtil {
     public static void setString(Context ctx, String key, String value) {
         SharedPreferences sp = ctx.getSharedPreferences("config",
                 Context.MODE_PRIVATE);

@@ -13,7 +13,7 @@ import com.youth.banner.loader.ImageLoader;
 public class GlideImageLoaderHomeBanner extends ImageLoader {
     @Override
     public void displayImage(Context context, Object path, ImageView imageView) {
-        imageView.setScaleType(ImageView.ScaleType.FIT_XY);
+        imageView.setScaleType(ImageView.ScaleType.CENTER_CROP);
         Glide.with(context)
                 .load(path)
                 .thumbnail(0.1f)

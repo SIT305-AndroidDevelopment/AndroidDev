@@ -1,6 +1,7 @@
 package com.example.assessment_2;
 
 import android.os.Bundle;
+import android.text.Layout;
 import android.widget.FrameLayout;
 
 import androidx.annotation.Nullable;
@@ -25,6 +26,7 @@ public class MainActivity extends AppCompatActivity{
      * 底部导航栏
      */
     public BottomNavigationBar bottomNavBar;
+    public Layout topNavBar;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
