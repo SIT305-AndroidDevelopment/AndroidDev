@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.assessment_2.MainActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:id="@+id/ll_ToSearch">
+
+        <TextView
+<<<<<<< HEAD:app/src/main/res/layout/page_brand.xml
+            android:text="Search bikes Here!!"
+            android:textStyle="bold"
+            android:textSize="30dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+=======
+            android:text="Search bikes"
+            android:textStyle="bold"
+            android:layout_width="320dp"
+            android:layout_height="20dp"
+>>>>>>> 882321405689a782c1a8835c5cca03894cc57371:Assessment-2/app/src/main/res/layout/page_brand.xml
+            android:layout_margin="5dp"/>
+
+    </LinearLayout>
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent" />
+
+    <com.example.assessment_2.view.SideBar
+        android:id="@+id/sideBar"
+        android:layout_width="25dp"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:visibility="gone"
+        />
+</LinearLayout>

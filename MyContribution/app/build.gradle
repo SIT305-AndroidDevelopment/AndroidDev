@@ -1,0 +1,69 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion 29
+    buildToolsVersion "29.0.2"
+
+    defaultConfig {
+        applicationId "com.example.assessment_2"
+        minSdkVersion 21
+        targetSdkVersion 29
+        versionCode 1
+        versionName "1.0"
+
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    sourceSets {
+        main {
+            jniLibs.srcDir 'libs'
+        }
+    }
+    compileOptions {
+        sourceCompatibility = 1.8
+        targetCompatibility = 1.8
+    }
+
+}
+
+dependencies {
+    implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    //implementation "com.android.support:support-v4:28.0.0"
+    implementation 'androidx.recyclerview:recyclerview:1.1.0'
+    implementation 'androidx.appcompat:appcompat:1.1.0'
+    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.2.0'
+    api 'androidx.recyclerview:recyclerview:1.1.0'
+    api 'com.github.CymChad:BaseRecyclerViewAdapterHelper:2.9.30'
+    api 'com.ashokvarma.android:bottom-navigation-bar:2.1.0'
+    api 'com.android.support:cardview-v7:27.1.1'
+    api 'com.github.bumptech.glide:glide:4.5.0'
+    api 'com.android.support:design:27.1.1'
+    api 'com.google.code.gson:gson:2.8.5'
+    api 'com.youth.banner:banner:1.4.9'
+    api files('libs\\BaiduLBS_Android.jar')
+    api 'cn.jzvd:jiaozivideoplayer:6.2.7'
+    api 'com.github.LuckSiege.PictureSelector:picture_library:v2.2.3'
+    api 'com.android.support:design:26.+'
+<<<<<<< HEAD
+    api 'com.yanzhenjie.nohttp:nohttp:1.1.4'
+=======
+>>>>>>> 882321405689a782c1a8835c5cca03894cc57371
+
+    //maven repo
+    repositories { maven { url 'http://cwdxlj.picp.io/repository/maven-releases/' } }
+    api 'com.example.assessment_2:maven_model:1.0.6@aar'
+}

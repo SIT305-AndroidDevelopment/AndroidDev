@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#28252C</color>
+    <color name="colorPrimaryDark">#28252C</color>
+    <color name="colorAccent">#28252C</color>
+    <color name="press">#28252C</color>
+
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+    <color name="gray">#B6B5B6</color>
+
+    <color name="d9">#d9d9d9</color>
+</resources>
+
+<!--<color name="colorPrimary">#6200EE</color>-->
+<!--<color name="colorPrimaryDark">#3700B3</color>-->
+<!--<color name="colorAccent">#6200EE</color>-->
+<!--<color name="press">#6200EE</color>-->

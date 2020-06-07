@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:id="@+id/iv_userBike"
+            android:layout_width="300dp"
+            android:layout_height="300dp"
+            android:layout_gravity="center"
+            android:src="@color/colorPrimary"
+            android:layout_marginTop="100dp"></ImageView>
+
+        <Button
+            android:id="@+id/btn_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Upload"
+            android:layout_marginTop="60dp"
+            android:layout_gravity="center"
+            ></Button>
+<<<<<<< HEAD
+        <EditText
+            android:id="@+id/edit_content"
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"/>
+        <Button
+            android:id="@+id/text_upload"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="上传文字"
+            android:layout_gravity="center"
+            ></Button>
+=======
+>>>>>>> 882321405689a782c1a8835c5cca03894cc57371
+    </LinearLayout>
+
+</LinearLayout>
